@@ -1,0 +1,47 @@
+{
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "bin": {
+    "yyl-requirejs": "bin/command.js"
+  },
+  "scripts": {
+    "test": "jest ./test/jest/"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "name": "yyl-requirejs-scripts",
+  "version": "0.1.0",
+  "description": "yyl requirejs npm scripts",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackness1208/yyl-requirejs-scripts.git"
+  },
+  "keywords": [
+    "yyl",
+    "requirejs",
+    "npm",
+    "scripts"
+  ],
+  "author": "jackness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackness1208/yyl-requirejs-scripts/issues"
+  },
+  "homepage": "https://github.com/jackness1208/yyl-requirejs-scripts#readme",
+  "dependencies": {
+    "commander": "^6.0.0",
+    "yyl-hander": "^0.10.0",
+    "yyl-os": "^0.11.2",
+    "yyl-print": "^0.8.0",
+    "yyl-seed-gulp-requirejs": "^4.7.1",
+    "yyl-server": "^0.3.10",
+    "yyl-util": "^2.3.8"
+  }
+}
