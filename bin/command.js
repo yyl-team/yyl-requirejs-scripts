@@ -110,4 +110,24 @@ cmder
       })
   })
 
+cmder
+  .command('all')
+  .description(Lang.Description.Optimize)
+  .allowUnknownOption()
+  .option('-c, --config <path>', Lang.Option.Path)
+  .option('--isCommit', Lang.Option.IsCommit)
+  .action((child) => {
+    const env = Object.assign(
+      getOption(child),
+      getOption(cmder)
+    )
+    optimize({ env, type: 'all' })
+      .catch((er) => {
+        if (env.logLevel === 2) {
+          log.error(er)
+        }
+        process.exit(1)
+      })
+  })
+
 cmder.parse(process.argv)
