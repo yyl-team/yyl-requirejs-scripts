@@ -1,0 +1,149 @@
+html {
+  -webkit-text-size-adjust: none;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  font-size: 100%;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-style: none;
+}
+
+button {
+  border: 0 none;
+  padding: 0;
+  cursor: pointer;
+}
+
+img {
+  border: 0;
+}
+
+input, select, img {
+  vertical-align: middle;
+}
+
+textarea {
+  resize: vertical;
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix, .cf {
+  zoom: 1;
+}
+.clearfix:after, .cf:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+body {
+  background: blue;
+}
+
+body {
+  font: 12px/1.5 Microsoft Yahei, simsun, Tahoma, Helvetica, Arial, SimHei, sans-serif;
+  min-width: 960px;
+  background: #f0f0f0;
+}
+body a {
+  color: #333;
+}
+body a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.wrapper {
+  padding-bottom: 70px;
+}
+.wrapper h3 {
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "iconfont";
+  src: url("/pc/font/test/iconfont-45888ade8c.eot");
+  src: url("/pc/font/test/iconfont-45888ade8c.eot?#iefix") format("embedded-opentype"), url("/pc/font/test/iconfont-cd85a115b8.woff") format("woff"), url("/pc/font/test/iconfont-8c78cd1de3.ttf") format("truetype"), url("/pc/font/test/iconfont-5d1965cb7f.svg#iconfont") format("svg");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.w-hello {
+  background: red;
+}
+
+.p-test-module {
+  padding: 8px;
+}
+.p-test-module .tl {
+  margin-bottom: 8px;
+  line-height: 20px;
+  background: #eee;
+  font-size: 14px;
+  text-indent: 8px;
+  display: block;
+}
+.p-test-module .cnt {
+  display: block;
+}
+.p-test-module .cnt a, .p-test-module .cnt iframe, .p-test-module .cnt span, .p-test-module .cnt img {
+  margin-right: 8px;
+}
+.p-test-module .cnt .box {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+  border: 1px solid #eee;
+  background-repeat: no-repeat;
+}
+.p-test-module .cnt .scss-style-1 {
+  background-image: url(http://yyweb.yystatic.com/pc/images/components/w-head/images/icons-head.png);
+}
+.p-test-module .cnt .scss-style-2 {
+  background-image: url(//yyweb.yystatic.com/pc/images/components/w-head/images/icons-head.png);
+}
+.p-test-module .cnt .scss-style-3 {
+  background-image: url(/pc/images/test/components/p-test/images/logo-2021d0ef33.png);
+}
+.p-test-module .cnt .scss-style-4 {
+  background-image: url(/pc/images/test/logo-2021d0ef33.png);
+}
+.p-test-module .cnt .scss-style-5 {
+  background-image: url(/pc/images/test/globalcomponents/w-test/images/logo-2021d0ef33.png);
+}
+.p-test-module .cnt .scss-style-6 {
+  background-image: url(/pc/images/test/logo-2021d0ef33.png);
+}

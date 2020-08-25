@@ -4,8 +4,8 @@ const print = require('yyl-print')
 const Lang = require('../lang/index')
 const pkg = require('../package.json')
 const util = require('yyl-util')
-const { watch } = require('../task/watch')
-const { optimize } = require('../task/optimize')
+const { log } = require('yyl-print')
+const { optimize } = require('../task/handler')
 
 cmder
   .usage('yyl-requirejs')
@@ -44,7 +44,7 @@ cmder
   .option('--proxy [value]', Lang.Option.Proxy)
   .option('--remote', Lang.Option.Remote)
   .option('--https', Lang.Option.Https)
-  .option('-p, --path <path>', Lang.Option.Path)
+  .option('-c, --config <path>', Lang.Option.Config)
   .option('--isCommit', Lang.Option.IsCommit)
   .action((child) => {
     const env = Object.assign(
@@ -54,7 +54,13 @@ cmder
       getOption(child),
       getOption(cmder)
     )
-    watch({ env })
+    optimize({ env, type: 'watch' })
+      .catch((er) => {
+        if (env.logLevel === 2) {
+          log.error(er)
+        }
+        process.exit(1)
+      })
   })
 
 
@@ -67,28 +73,41 @@ cmder
   .option('--proxy [value]', Lang.Option.Proxy)
   .option('--remote', Lang.Option.Remote)
   .option('--https', Lang.Option.Https)
-  .option('-p, --path <path>', Lang.Option.Path)
+  .option('-c, --config <path>', Lang.Option.Path)
   .option('--isCommit', Lang.Option.IsCommit)
   .action((child) => {
     const env = Object.assign(
       getOption(child),
       getOption(cmder)
     )
-    watch({ env })
+    optimize({ env, type: 'watch' })
+      .catch((er) => {
+        if (env.logLevel === 2) {
+          log.error(er)
+        }
+        process.exit(1)
+      })
   })
 
 cmder
   .command('optimize')
   .alias('o')
   .description(Lang.Description.Optimize)
-  .option('-p, --path', Lang.Option.Path)
+  .allowUnknownOption()
+  .option('-c, --config <path>', Lang.Option.Path)
   .option('--isCommit', Lang.Option.IsCommit)
   .action((child) => {
     const env = Object.assign(
       getOption(child),
       getOption(cmder)
     )
-    optimize({ env })
+    optimize({ env, type: 'all' })
+      .catch((er) => {
+        if (env.logLevel === 2) {
+          log.error(er)
+        }
+        process.exit(1)
+      })
   })
 
 cmder.parse(process.argv)
